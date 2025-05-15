@@ -1,0 +1,279 @@
+/* Reseteo inicial*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+ max-width: 100%;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color:  rgb(255, 224, 228);
+  color: purple;
+    }
+
+/* decoracion del menu superior para que tenga 2 colores*/
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: lineapero r-gradient(to right, pink, rgb(207, 240, 207));
+}
+
+/*espaciado para menu superior Features, Why it works...FAQ*/
+nav ul {
+  display: flex;
+  margin: 20px;
+  gap: 20px;
+  list-style: none;
+}
+
+/*Esto es para la decoracion del menu superior Features, para que salga sin rayita y en negrita*/
+nav a {
+  color: purple;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/*Esto es para la decoracion del menu superior Features, para que cambie de color cuando el cursor se asoma*/
+nav a:hover {
+  color: magenta;
+}
+
+
+/* Esto es para el botoncito de login*/ 
+header button {
+  background-color: hotpink;
+  color: rgb(255, 243, 244);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* Clase - revisar video
+header > img{
+flex:1;
+max-width: fit-content;
+}
+header > 
+
+header > button{
+}
+*/
+
+
+/*texto principal*/
+#hero {
+text-align: center;
+margin-bottom: 20px;
+margin-top:20px;
+}
+
+/*cajitas de arriba incluyen texto e imagen principal*/
+.heroboxes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap:10px;
+
+#hero1 {
+display:flex;
+text-align:left;
+margin-left: 20px;
+align-items: center;
+}
+
+/*imagen del parque en la parte superior derecha*/
+#hero2 {
+display: flex;
+  flex-direction: right;
+  background-repeat: no-repeat;
+  height: auto;
+  display: block;
+  margin-right: 20px;
+}
+}
+
+/* los partners y las marcas asociadas, estan alineados en la mitad de la pantalla con el texto a la izquierda y las marcas en linea con flex a la derecha */
+#feature-section {
+  padding: 40px;
+  background-color: rgb(255, 224, 228);
+  }
+
+#feature-section-container-title {
+display:flex;
+justify-content: space-between;
+align-items: center; /*esto es para centrar el texto verticalmente en la celda*/
+flex-wrap: wrap;
+gap:20px;
+margin-bottom: 40px;
+}
+
+#feature-section-container-title
+h4 {
+  margin:0;
+  flex: 1 1 300px;
+  text-align: left;
+}
+
+.icon-container
+{
+display: flex;
+gap:15px;
+margin-left:auto;
+}
+
+/* aqui empiezan las tarjetitas con los features */
+
+/* esto hace aparecer las 3 tarjetitas en fila en lugar de 1 y 2 abajo
+#features-section-cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+*/
+
+#features-section-cards-container {
+  display: grid;
+  grid-template-columns: 1fr; /* esto es para separar en columnas para el movil */
+  gap: 20px;
+}
+
+/* esto es para que la primera tarjetita ocupe todo el ancho de la pantalla */
+.features-section-cards-container-card.first-card {
+  display: grid;
+  grid-template-columns: 1fr 120px;
+  align-items: center;
+  gap: 20px;
+  grid-column: span 2; /* esto es para todo el ancho de la primera tarjeta */
+}
+
+  
+/* esto es para las tarjetitas con la imagen debajo del texto */
+.features-section-cards-container-card.stacked-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* esto es para las tarjetitas de la segunda fila, para que vayan lado a lado */
+@media (min-width: 768px) {
+  #features-section-cards-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+}
+
+.features-section-cards-container-card {
+  background: rgb(255, 238, 218);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px lightpink;
+  transition: transform 0.3s ease; /*esto es para que se mueva suavecito cuando pasa de una cajita a otra */
+}
+
+/* esto es para que la tarjetita se agrande con el cursor */
+.features-section-cards-container-card:hover {
+  transform: scale(1.05);
+}
+
+#why-choose-Battlescript-section {
+  background-color: rgb(248, 222, 226);
+  padding: 40px;
+}
+
+.why-choose-us-section-cards-container {
+  display: flex;
+  gap: 20px;
+  padding-bottom: 10px;
+ }
+
+/* carrusel estatico*/
+#review-section {
+  padding: 40px;
+  background-color:rgb(252, 235, 242);
+}
+
+.review-section-carousel-container {
+  display: flex;
+  flex-wrap: nowrap; /*para que tenga overflow*/
+  overflow-x: auto; /* para la barrita de abajo*/
+  gap: 20px;
+  padding-bottom: 10px;
+}
+
+.review-section-carousel--card {
+  flex: 0 0 auto;            /* para que no se encoja */
+  width: 300px;
+  background-color:rgb(247, 239, 222);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px lightgrey;
+  scroll-snap-align: start; /* opcional para que se alinie al comienzo del scroll */
+}
+
+
+#FAQ {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 40px;
+  background-color:rgb(248, 222, 226);
+}
+
+#faq-section-left, #faq-section-right {
+  flex: 1;
+  min-width: 300px;
+  padding: 20px;
+  }
+
+.faq-section-right-card {
+  background-color: rgb(252, 235, 242);
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+ }
+
+#cta-heading-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  background-color: rgb(252, 235, 242);
+  padding: 40px;
+}
+
+.cta-heading-section-first button {
+  background-color: hotpink;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px 10px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+footer {
+  background-color: rgb(252, 235, 242);
+  padding: 20px;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+footer a {
+  color: hotpink;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
